@@ -1,0 +1,102 @@
+{
+  "Users": [
+    {
+      "UserId": "aws-001",
+      "UserName": "john_doe",
+      "Department": "Finance",
+      "Groups": [
+        "Admins"
+      ],
+      "Policies": [
+        {
+          "PolicyName": "AdministratorAccess",
+          "Effect": "Allow",
+          "Actions": [
+            "*"
+          ],
+          "Resource": "*"
+        }
+      ],
+      "LastAccessed": "2024-03-15"
+    },
+    {
+      "UserId": "aws-002",
+      "UserName": "jane_smith",
+      "Department": "HR",
+      "Groups": [
+        "Developers"
+      ],
+      "Policies": [
+        {
+          "PolicyName": "S3FullAccess",
+          "Effect": "Allow",
+          "Actions": [
+            "s3:*"
+          ],
+          "Resource": "*"
+        }
+      ],
+      "LastAccessed": "2024-02-20"
+    },
+    {
+      "UserId": "aws-003",
+      "UserName": "mike_johnson",
+      "Department": "IT",
+      "Groups": [
+        "DevOps"
+      ],
+      "Policies": [
+        {
+          "PolicyName": "PowerUserAccess",
+          "Effect": "Allow",
+          "Actions": [
+            "ec2:*",
+            "s3:*",
+            "rds:*"
+          ],
+          "Resource": "*"
+        }
+      ],
+      "LastAccessed": "2024-04-01"
+    },
+    {
+      "UserId": "aws-004",
+      "UserName": "sarah_williams",
+      "Department": "Security",
+      "Groups": [
+        "SecurityTeam"
+      ],
+      "Policies": [
+        {
+          "PolicyName": "IAMFullAccess",
+          "Effect": "Allow",
+          "Actions": [
+            "iam:*"
+          ],
+          "Resource": "*"
+        }
+      ],
+      "LastAccessed": "2024-01-10"
+    },
+    {
+      "UserId": "aws-005",
+      "UserName": "david_brown",
+      "Department": "DevOps",
+      "Groups": [
+        "ReadOnly"
+      ],
+      "Policies": [
+        {
+          "PolicyName": "ReadOnlyAccess",
+          "Effect": "Allow",
+          "Actions": [
+            "cloudwatch:Read",
+            "s3:GetObject"
+          ],
+          "Resource": "*"
+        }
+      ],
+      "LastAccessed": "2024-03-28"
+    }
+  ]
+}

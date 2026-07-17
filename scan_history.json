@@ -1,0 +1,25 @@
+[
+    {
+        "time": "2026-05-15 22:58:46",
+        "score": 50,
+        "issues": 6
+    },
+    {
+        "time": "2026-05-15 23:13:47",
+        "score": 50,
+        "issues": 6,
+        "critical": 0,
+        "high": 4,
+        "medium": 2,
+        "low": 0
+    },
+    {
+        "time": "2026-05-16 08:35:49",
+        "score": 50,
+        "issues": 6,
+        "critical": 0,
+        "high": 4,
+        "medium": 2,
+        "low": 0
+    }
+]

@@ -1,0 +1,161 @@
+{
+  "users": [
+    {
+      "UserId": "U001",
+      "UserName": "john_doe",
+      "Department": "IT Administration",
+      "AttachedPolicies": [
+        {
+          "PolicyName": "AdministratorAccess",
+          "PolicyDocument": {
+            "Statement": [{ "Effect": "Allow", "Action": "*", "Resource": "*" }]
+          }
+        }
+      ]
+    },
+    {
+      "UserId": "U002",
+      "UserName": "mike_johnson",
+      "Department": "DevOps",
+      "AttachedPolicies": [
+        {
+          "PolicyName": "PowerUserAccess",
+          "PolicyDocument": {
+            "Statement": [{ "Effect": "Allow", "Action": "*", "Resource": "*",
+              "Condition": { "StringNotEquals": { "aws:RequestedRegion": "ap-east-1" } } }]
+          }
+        }
+      ]
+    },
+    {
+      "UserId": "U003",
+      "UserName": "david_brown",
+      "Department": "Finance",
+      "AttachedPolicies": [
+        {
+          "PolicyName": "ReadOnlyAccess",
+          "PolicyDocument": {
+            "Statement": [{ "Effect": "Allow", "Action": ["s3:Get*", "s3:List*", "ec2:Describe*"], "Resource": "*" }]
+          }
+        }
+      ]
+    },
+    {
+      "UserId": "U004",
+      "UserName": "sarah_connor",
+      "Department": "Security",
+      "AttachedPolicies": [
+        {
+          "PolicyName": "AdministratorAccess",
+          "PolicyDocument": {
+            "Statement": [{ "Effect": "Allow", "Action": "*", "Resource": "*" }]
+          }
+        }
+      ]
+    },
+    {
+      "UserId": "U005",
+      "UserName": "alice_walker",
+      "Department": "Data Engineering",
+      "AttachedPolicies": [
+        {
+          "PolicyName": "S3FullAccess",
+          "PolicyDocument": {
+            "Statement": [{ "Effect": "Allow", "Action": "s3:*", "Resource": "*" }]
+          }
+        }
+      ]
+    },
+    {
+      "UserId": "U006",
+      "UserName": "bob_smith",
+      "Department": "Networking",
+      "AttachedPolicies": [
+        {
+          "PolicyName": "ReadOnlyAccess",
+          "PolicyDocument": {
+            "Statement": [{ "Effect": "Allow", "Action": ["ec2:Describe*", "vpc:Describe*"], "Resource": "*" }]
+          }
+        }
+      ]
+    },
+    {
+      "UserId": "U007",
+      "UserName": "carol_white",
+      "Department": "HR",
+      "AttachedPolicies": [
+        {
+          "PolicyName": "IAMFullAccess",
+          "PolicyDocument": {
+            "Statement": [{ "Effect": "Allow", "Action": "iam:*", "Resource": "*" }]
+          }
+        }
+      ]
+    },
+    {
+      "UserId": "U008",
+      "UserName": "frank_castle",
+      "Department": "Compliance",
+      "AttachedPolicies": [
+        {
+          "PolicyName": "ReadOnlyAccess",
+          "PolicyDocument": {
+            "Statement": [{ "Effect": "Allow", "Action": ["cloudtrail:Get*", "config:Get*"], "Resource": "*" }]
+          }
+        }
+      ]
+    },
+    {
+      "UserId": "U009",
+      "UserName": "grace_hopper",
+      "Department": "Research",
+      "AttachedPolicies": [
+        {
+          "PolicyName": "PowerUserAccess",
+          "PolicyDocument": {
+            "Statement": [{ "Effect": "Allow", "Action": "*", "Resource": "*" }]
+          }
+        }
+      ]
+    },
+    {
+      "UserId": "U010",
+      "UserName": "henry_ford",
+      "Department": "Manufacturing IT",
+      "AttachedPolicies": [
+        {
+          "PolicyName": "EC2FullAccess",
+          "PolicyDocument": {
+            "Statement": [{ "Effect": "Allow", "Action": "ec2:*", "Resource": "*" }]
+          }
+        }
+      ]
+    },
+    {
+      "UserId": "U011",
+      "UserName": "iris_west",
+      "Department": "Marketing",
+      "AttachedPolicies": [
+        {
+          "PolicyName": "ReadOnlyAccess",
+          "PolicyDocument": {
+            "Statement": [{ "Effect": "Allow", "Action": ["s3:GetObject", "s3:ListBucket"], "Resource": "*" }]
+          }
+        }
+      ]
+    },
+    {
+      "UserId": "U012",
+      "UserName": "james_bond",
+      "Department": "Intelligence",
+      "AttachedPolicies": [
+        {
+          "PolicyName": "AdministratorAccess",
+          "PolicyDocument": {
+            "Statement": [{ "Effect": "Allow", "Action": "*", "Resource": "*" }]
+          }
+        }
+      ]
+    }
+  ]
+}

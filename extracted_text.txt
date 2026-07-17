@@ -1,0 +1,144 @@
+CHAPTER THREE METHODOLOGY
+3.1 INTRODUCTION
+This chapter presents the methodological approach adopted in the design and development of the proposed system for harmonizing user privileges across multi-cloud platforms. The chapter provides a detailed explanation of the research design, system architecture, data collection procedures, data modeling techniques, algorithm design, system workflow, and evaluation methods.
+The primary objective of this study is to develop a Python-based system capable of analyzing Identity and Access Management (IAM) configurations from AWS and Azure environments, identifying inconsistencies in user privileges, and generating harmonized recommendations that improve security and governance.
+Unlike purely theoretical studies, this research emphasizes practical system development, ensuring that the proposed solution can be implemented and evaluated in a controlled environment.
+It presents the detailed methodology used in designing and developing the proposed system for harmonizing user privileges across multi-cloud platforms. It explains the research design, system architecture, data collection methods, data modeling, algorithm design, system workflow, and evaluation techniques.    The aim is to develop a Python-based system that can analyze Identity and Access Management (IAM) configurations from AWS and Azure, detect inconsistencies, and generate harmonized privilege recommendations.
+3.2 RESEARCH DESIGN
+This study adopts the Design Science Research (DSR) methodology. DSR is particularly suitable because it focuses on the creation and evaluation of artifacts designed to solve identified problems.
+In the context of this research, the artifact is a functional privilege harmonization system.
+Why Design Science Research is Appropriate
+The choice of DSR is justified by the following:
+It addresses a real-world cybersecurity problem
+It involves design, development, and validation of a system
+It produces a working prototype, not just theoretical insight
+3.2.1 The research process follows a structured progression:
+Figure 8: Research Process Flow Diagram (Created using ChatGPT)
+3.3 SYSTEM OVERVIEW
+The proposed system is designed to operate as an intelligent analysis tool that integrates IAM data from multiple cloud platforms and produces harmonized outputs.
+Core Functional Objectives
+The system performs the following key functions:
+Extraction of IAM data from AWS and Azure
+Transformation of heterogeneous IAM formats into a unified structure
+Cross-platform comparison of user privileges
+Detection of inconsistencies and excessive permissions
+Generation of harmonized recommendations
+Figure 9: System overview (Created using ChatGPT)
+3.4 PROPOSED SYSTEM ARICHITECTURE
+The system adopts a three-layer architecture, designed to ensure modularity, scalability, and clarity of operations.
+Figure 10: System architecture (Created using ChatGPT)
+3.4.2 EXPLANATION OF ARCHITECTURE
+1. Data Ingestion Layer
+This layer is responsible for collecting IAM data from both AWS and Azure environments. It processes JSON files and extracts relevant entities such as users, roles, permissions, and policies.
+Privilege Analysis Layer
+This is the core analytical component of the system. It converts raw data into a unified format and performs comparisons to detect inconsistencies, redundant permissions, and potential risks.
+Harmonization Layer
+This layer ensures consistency across platforms by mapping equivalent roles and generating actionable recommendations. It also produces reports that can be used for decision-making.
+3.5 DATA COLLECTION METHOD
+3.5.1 DATA SOURCES
+The system utilizes:
+Simulated AWS IAM datasets
+Simulated Azure RBAC datasets
+These datasets are structured to reflect real-world IAM configurations while avoiding exposure to sensitive data.
+3.5.2 DATA FORMAT
+All data is stored in JSON format, which is widely used in cloud environments due to its flexibility and ease of parsing.
+IAM Data Structure Representation
+{
+  "User_ID": "U001",
+  "Platform": "AWS",
+  "Role": "Admin",
+  "Permission": "Full Access",
+  "Resource": "S3"
+}
+3.6 DATA MODELING AND NORMALIZATION
+3.6.1 PROBLEM CONTEXT
+AWS and Azure implement IAM using fundamentally different models:
+AWS → Policy-based
+Azure → Role-based
+This creates incompatibility when attempting cross-platform analysis.
+3.6.2 UNIFIED DATA MODEL
+Field
+Description
+User_ID
+Unique identifier
+Platform
+AWS / Azure
+Role
+Assigned role
+Permission
+Allowed action
+Resource
+Target resource
+3.6.3 NORMALIZATION
+ The system uses a normalization flow by converting the data sets into a unified format that can be understood by the system which is the JSON format
+Figure 11: Normalization flow (Created using ChatGPT)
+3.7 SYSTEM ALGORITHM
+3.7.1 ALGORITHM STEPS
+Load datasets
+Normalize IAM data
+Compare privileges
+Detect inconsistencies
+Identify excessive permissions
+Map equivalent roles
+Generate recommendations
+3.7.2 LOGIC EXPLANATION
+If a user has different permissions across platforms → Inconsistency detected
+If a user has more permissions than required → Excess privilege risk
+If roles differ but represent similar access → Mapping required
+3.7.3 PSEUDOCODE
+BEGIN
+LOAD AWS_data
+LOAD Azure_data
+NORMALIZE datasets
+FOR each user IN dataset:
+    COMPARE permissions
+    
+    IF permissions mismatch:
+        FLAG inconsistency
+        
+    IF permissions exceed requirement:
+        FLAG excess privilege
+        
+    MAP equivalent roles
+GENERATE recommendations
+OUTPUT report
+END
+Figure 12: Flowchart diagram (Created using ChatGPT)
+3.9 SYSTEM MODULES
+The system is modular to improve maintainability and scalability.
+Module Interaction Diagram
+Data Loader → Normalization → Analysis → Harmonization → Reporting
+Module Descriptions
+Data Loader Module: Handles ingestion of AWS and Azure IAM datasets
+Normalization Module: Converts heterogeneous data into a unified structure
+Analysis Module: Performs comparison and detects inconsistencies
+Harmonization Module: Maps equivalent permissions across platforms
+Reporting Module: Generates user-friendly output
+3.10 TOOLS AND TECHNOLOGIES
+Programming Language: Python
+Development Tool: Visual Studio Code
+Libraries: 
+Pandas (data processing)
+JSON (data parsing)
+3.11 TESTING STRATEGY
+The system undergoes multiple levels of testing:
+Testing Workflow
+Unit Testing → Integration Testing → System Testing
+Unit Testing: Tests individual modules
+Integration Testing: Ensures modules work together
+System Testing: Validates complete system performance
+3.12 EVALUATION METRICS
+AccuracyMeasures correctness in detecting inconsistencies
+EfficiencyEvaluates processing speed
+ScalabilityAssesses performance with large datasets
+Evaluation Model
+System Output → Compare with Expected Results → Measure Performance
+3.13 ETHICAL CONSIDERATIONS
+No real cloud credentials were used
+All datasets are simulated
+User privacy and data security are maintained
+The system is designed strictly for research purposes
+3.14 LIMITATIONS
+No real-time cloud integration
+Limited to AWS and Azure
+Dependence on simulated datasets

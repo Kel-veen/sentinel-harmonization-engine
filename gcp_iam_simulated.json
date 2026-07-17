@@ -1,0 +1,82 @@
+{
+  "projectId": "afit-cloud-project",
+  "projectNumber": "123456789012",
+  "bindings": [
+    {
+      "role": "roles/owner",
+      "members": [
+        "user:john_doe",
+        "user:sarah_connor"
+      ],
+      "resource": "projects/afit-cloud-project",
+      "condition": null
+    },
+    {
+      "role": "roles/editor",
+      "members": [
+        "user:mike_johnson",
+        "user:alice_walker",
+        "user:carol_white",
+        "user:grace_hopper",
+        "user:henry_ford"
+      ],
+      "resource": "projects/afit-cloud-project",
+      "condition": null
+    },
+    {
+      "role": "roles/viewer",
+      "members": [
+        "user:david_brown",
+        "user:bob_smith",
+        "user:frank_castle",
+        "user:iris_west",
+        "user:james_bond"
+      ],
+      "resource": "projects/afit-cloud-project",
+      "condition": null
+    },
+    {
+      "role": "roles/storage.objectAdmin",
+      "members": [
+        "user:alice_walker"
+      ],
+      "resource": "projects/afit-cloud-project/buckets/data-lake",
+      "condition": null
+    },
+    {
+      "role": "roles/iam.securityAdmin",
+      "members": [
+        "user:lena_stein"
+      ],
+      "resource": "projects/afit-cloud-project",
+      "condition": null
+    },
+    {
+      "role": "roles/compute.instanceAdmin",
+      "members": [
+        "user:henry_ford",
+        "user:mike_johnson"
+      ],
+      "resource": "projects/afit-cloud-project/zones/us-central1-a",
+      "condition": null
+    },
+    {
+      "role": "roles/bigquery.dataViewer",
+      "members": [
+        "user:david_brown",
+        "user:iris_west"
+      ],
+      "resource": "projects/afit-cloud-project/datasets/finance_data",
+      "condition": null
+    },
+    {
+      "role": "roles/logging.viewer",
+      "members": [
+        "user:frank_castle",
+        "user:bob_smith"
+      ],
+      "resource": "projects/afit-cloud-project",
+      "condition": null
+    }
+  ]
+}
